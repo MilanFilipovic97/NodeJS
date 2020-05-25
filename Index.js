@@ -7,10 +7,10 @@ require('dotenv').config();
 const app = express();
 app.use(cors());
 const bodyParser = require('body-parser')
+const PORT = process.env.PORT || 5000; // ovo je port
 
 
-
-app.listen('3000', ()=>{        // da ga pokrene, osluskuje port 3000
+app.listen(PORT, ()=>{        // da ga pokrene, osluskuje port 3000
     
     console.log('server je startovan na portu 3000');
 })            
