@@ -152,7 +152,6 @@ app.put('/updateVrstePrihoda', (req,res)=> {
 
 //#region Upiti za dnevni prikaz
 
-//ovako je bilo 
 
 app.post("/dodajVrednostRashoda", function (req, res) {        
     
