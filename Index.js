@@ -48,7 +48,6 @@ app.use(bodyParser.json())
 
 //#region Upiti za vrste rashoda
 
-
 //select vrste rashoda
 
 app.get('/selectVrsteRashoda', (req,res)=> {
@@ -65,10 +64,10 @@ app.get('/selectVrsteRashoda', (req,res)=> {
 
 // obrisi vrstu rashoda 
 
-app.delete('/obrisiVrstuRashoda', (req,res)=> {
+app.delete('/obrisiVrstuRashoda/:ID', (req,res)=> {
    
     
-    let sql = `Delete from vrste_rashoda where id = ${req.body.ID} `;
+    let sql = `Delete from vrste_rashoda where id = ${req.params.ID} `;
     let query = db.query(sql, (err,result)=>{
         if(err) throw err;
         console.log(result);
