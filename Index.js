@@ -218,9 +218,9 @@ app.post("/dodajVrednostRashoda", function (req, res) {
         res.send('post 1 dodat');
 });
 });*/
-app.post("/dodajVrednostRashoda/:datum/:vrednost", function (req, res) {        
+app.post("/dodajVrednostRashoda/:datum/:vrednost/:ID_Vrste_Rashoda", function (req, res) {        
     //res.send('post 1 dodat'); 
-    res.send(req.params.datum + " " + req.params.vrednost);
+    res.send(req.params.datum + " " + req.params.vrednost + " " + req.params.ID_Vrste_Rashoda);
     //let sql = 'INSERT INTO lista_rashoda (Datum,Vrednost,ID_Vrste_Rashoda) values ("'+req.params.datum +'", "'+ req.params.vrednost +'","'+ req.params.ID_Vrste_Rashoda +'")';
     //let query = db.query(sql, (err,result)=>{
       //  if(err) throw err;
