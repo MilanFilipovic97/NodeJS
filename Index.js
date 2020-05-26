@@ -35,60 +35,6 @@ db.connect((err) =>{
 
 
 
-//#region OVO JE NEKI STARI UPITI
-app.get('/insert1', (req,res)=> {
-    let post = {
-        title: 'post 1',
-        body: 'ovo je post 1',
-    }; 
-    let sql = 'INSERT INTO proba SET ?';
-    let query = db.query(sql,post, (err,result)=>{
-        if(err) throw err;
-        console.log(result);
-        res.send('post 1 dodat');
-    });
-});
-
-app.get('/select/:id', (req,res)=> {
-    
-    let sql = `SELECT * FROM proba where id = ${req.params.id} `;
-    let query = db.query(sql, (err,result)=>{
-        if(err) throw err;
-        res.send(result);
-        console.log(result);
-        //res.send('postovi prikazani');
-    });
-});
-
-
-//update data
-
-app.get('/update/:id', (req,res)=> {
-    
-    let newTitle = 'novi naslov';
-    let sql = `Update proba set title = '${newTitle}' where id = ${req.params.id} `;
-    let query = db.query(sql, (err,result)=>{
-        if(err) throw err;
-        console.log(result);
-        res.send('izmenjen je sadrzaj');
-    });
-});
-//delete data
-
-app.get('/delete/:id', (req,res)=> {
-    
-    
-    let sql = `Delete from proba  where id = ${req.params.id} `;
-    let query = db.query(sql, (err,result)=>{
-        if(err) throw err;
-        console.log(result);
-        res.send('obrisan je sadrzaj');
-    });
-});
-//#endregion
-
-
-
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
