@@ -120,7 +120,7 @@ app.get('/selectVrsteRashoda', (req,res)=> {
 // obrisi vrstu rashoda 
 
 app.delete('/obrisiVrstuRashoda', (req,res)=> {
-    
+   
     
     let sql = `Delete from vrste_rashoda where id = ${req.body.ID} `;
     let query = db.query(sql, (err,result)=>{
