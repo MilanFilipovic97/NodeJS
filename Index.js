@@ -207,6 +207,8 @@ app.put('/updateVrstePrihoda', (req,res)=> {
 
 //#region Upiti za dnevni prikaz
 
+//ovako je bilo 
+/*
 app.post("/dodajVrednostRashoda", function (req, res) {        
     
     let sql = 'INSERT INTO lista_rashoda (Datum,Vrednost,ID_Vrste_Rashoda) values ("'+req.body.Datum +'", "'+ req.body.Vrednost +'","'+ req.body.ID_Vrste_Rashoda +'")';
@@ -215,7 +217,18 @@ app.post("/dodajVrednostRashoda", function (req, res) {
         console.log(result);
         res.send('post 1 dodat');
 });
+});*/
+app.post("/dodajVrednostRashoda/:datum/:vrednost/:ID_Vrste_Rashoda", function (req, res) {        
+    
+    let sql = 'INSERT INTO lista_rashoda (Datum,Vrednost,ID_Vrste_Rashoda) values ("'+req.params.datum +'", "'+ req.params.vrednost +'","'+ req.params.ID_Vrste_Rashoda +'")';
+    let query = db.query(sql, (err,result)=>{
+        if(err) {throw err; res.send(req.body.Datum);};
+        console.log(result);
+        res.send('post 1 dodat');
 });
+});
+
+
 
 //listu troskova vracam na taj dan
 app.get('/selectListaRashoda/:datum', (req,res)=> {
