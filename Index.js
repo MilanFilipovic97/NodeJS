@@ -211,7 +211,7 @@ app.post("/dodajVrednostRashoda", function (req, res) {
     
     let sql = 'INSERT INTO lista_rashoda (Datum,Vrednost,ID_Vrste_Rashoda) values ("'+req.body.Datum +'", "'+ req.body.Vrednost +'","'+ req.body.ID_Vrste_Rashoda +'")';
     let query = db.query(sql, (err,result)=>{
-        if(err) throw err;
+        if(err) {throw err; res.send(req.body.Datum);};
         console.log(result);
         res.send('post 1 dodat');
 });
