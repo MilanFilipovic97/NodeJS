@@ -17,10 +17,10 @@ app.listen(PORT, ()=>{        // da ga pokrene, osluskuje port 3000
 
 // kreiranje konekcije mysql 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user:'root',
-    password: '',
-    database: 'projekatReact'
+    host: 'us-cdbr-east-06.cleardb.net',
+    user:'bed46095b1465c',
+    password: '16c21bd2',
+    database: 'heroku_f29ec228f2a6eab'
 });
 
 // povezivanje
