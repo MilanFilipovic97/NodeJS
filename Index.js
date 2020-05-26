@@ -222,7 +222,7 @@ app.post("/dodajVrednostRashoda/:datum/:vrednost/:ID_Vrste_Rashoda", function (r
     
     let sql = 'INSERT INTO lista_rashoda (Datum,Vrednost,ID_Vrste_Rashoda) values ("'+req.params.datum +'", "'+ req.params.vrednost +'","'+ req.params.ID_Vrste_Rashoda +'")';
     let query = db.query(sql, (err,result)=>{
-        if(err) {throw err; res.send(req.body.Datum);};
+        if(err) throw err;
         console.log(result);
         res.send('post 1 dodat');
 });
